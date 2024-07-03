@@ -9,21 +9,40 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="mx-auto col-3 mt-5">
-            <h2 class="text-center">Wellcome Page</h2>
-        </div>
-        <div class="mt-5 col-md-3">
-            <label for="getId">enter your user id :</label>
-            <div class="input-group">
-                <input name="getId" id="getId" class="form-control col-3" type="number" required value="" placeholder="User-ID">
-                <button class="btn btn-primary" id="search" onclick="load(document.getElementById('getId').value)"><a href="#" class="link-underline-opacity-0 link-light">search</a></button>
-            </div>
-        </div>
-        <div>
+<div class="container">
 
+    <div class="mx-auto col-3 my-5">
+        <h2 class="text-center">Wellcome Page</h2>
+    </div>
+    <label>List of Users:</label>
+    <table class="table table-hover table-striped table-responsive">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Phone</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+
+    <div class="mt-5 col-md-3">
+        <label for="getId">enter your user id :</label>
+        <div class="input-group">
+            <input name="getId" id="getId" class="form-control col-3" type="number" required value=""
+                   placeholder="User-ID" >
+            <button class="btn btn-primary" id="search" onclick="load(document.getElementById('getId').value)"><a
+                    href="#" class="link-underline-opacity-0 link-light">search</a></button>
         </div>
     </div>
+
+    <div id="result" class="row">
+
+    </div>
+</div>
 
 
 <script type="text/javascript" src="./main.js"></script>
