@@ -32,7 +32,7 @@ async function load(userid) {
     // res = await fetchData();
 
     res.forEach((item) => {
-        if (item.userId === +userid) {
+        if (item.userId === +userid ) {
             data += template(item.userId, item.body, item.title, item.id)
         }
     })
@@ -49,7 +49,7 @@ function show(data, id) {
 
 
 function template(userid, body, title, id) {
-    return `<div class="col-md-6 col-lg-4 p-2" id="${id}">
+    return `<div class="col-md-6 col-lg-4 p-2" id="${id + 'col'}">
             <div class="card">
                 <div class="card-body p-0">
                     <h4 class="p-3">${title}</h4>
@@ -58,7 +58,7 @@ function template(userid, body, title, id) {
 
                     <div class="justify-content-between row">
                         <div class="d-flex m-3 col">
-                            <button type="button" class="btn btn-outline-secondary" onclick="deleting(${id}, 'posts')">dont show</button>
+                            <button type="button" class="btn btn-outline-secondary" onclick="deleting('${id + 'col'}', 'posts')">dont show</button>
                         </div>
                         <span class="col-2 my-auto">${userid}</span>
                     </div>
